@@ -2,6 +2,24 @@ connect via nc readme.ctfcompetition.com 1337
 
 the flag is in /challenge/README.flag
 
+> lzop -o /dev/shm/ *
+lzop: unrecognized option: o
+BusyBox v1.29.3 (2019-01-24 07:45:07 UTC) multi-call binary.
+
+Usage: lzop [-cfUvd123456789CF] [FILE]...
+
+	-1..9	Compression level
+	-d	Decompress
+	-c	Write to stdout
+	-f	Force
+	-U	Delete input files
+	-v	Verbose
+	-F	Don't store or verify checksum
+	-C	Also write checksum of compressed block
+> lzop -c *
+
+
+
 You can read the flag with lzop -c README.flag
 
 CTF{4ll_D474_5h4ll_B3_Fr33}
