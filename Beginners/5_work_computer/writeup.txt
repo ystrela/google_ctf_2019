@@ -1,0 +1,7 @@
+connect via nc readme.ctfcompetition.com 1337
+
+the flag is in /challenge/README.flag
+
+You can read the flag with lzop -c README.flag
+
+CTF{4ll_D474_5h4ll_B3_Fr33}
