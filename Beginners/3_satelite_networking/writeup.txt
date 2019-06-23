@@ -1,0 +1,17 @@
+1. PDF file has a name painted on it: osmium
+
+2. init_sat binary ask for a satelite name. Entering osmium connects to the satelite. After pressing a a google doc link is shown which contains a base64 encoded string. Decoding it yiels the following credentials:
+
+2NrcwpQYXNzd29yZDogc3RhcnQtc25pZmZpbmchCg== | base64 -d
+Username: wireshark-rocks
+Password: start-sniffing!
+
+This gives us a hint to sniff the traffic created by the application. Running up wireshark and connecting to the satelite I could see the following dns record: satellite.ctfcompetition.com
+I could find out its IP by pinging the domain: 34.76.101.29
+
+Filtering for this IP in wireshark with ip.addr == 34.76.101.29 showed only the traffic from this application. After looking through the packets I saw a TCP packets with the flag in it:
+
+CTF{4efcc72090af28fd33a2118985541f92e793477f}	
+
+
+

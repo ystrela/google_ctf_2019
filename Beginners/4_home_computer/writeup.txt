@@ -1,0 +1,22 @@
+The downloaded file is a zip archive. We found this out by using the file command.
+Unzip the file with unzip. In it you find a ntfs file system which we can mount with:
+
+mkdir /mnt/directory
+mount -t ntfs family.ntfs /mnt/directory
+
+Upon navigating to /mnt/directory you can see that it is a Windows Filesystem. The interesting file is /Users/Documents/credentials.txt 
+Reading the content of the file you get a hint that the author likes to hide her credentials as image files inside extended attributes. 
+
+You can read extended attributes with this command: 
+getfattr -d -m ".*" credentials.txt
+
+The output of the above command looks like the following:
+"user.FILE0=0si.........." (without the quotes)
+
+This is a base64 encoded image. I removed everything up to the first "s" character and then saved the file. Then I used the following command to decode it to an image:
+cat saved_file | base64 -d > image.png
+
+Opening the png image showed the flag
+
+
+CTF{congratsyoufoundmycreds}
