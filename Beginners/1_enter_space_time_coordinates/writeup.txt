@@ -1,0 +1,6 @@
+write up 
+Enter Space-Time Coordinates - Misc
+
+strings rand2
+
+-> flag: CTF{welcome_to_googlectf}

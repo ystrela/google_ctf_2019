@@ -1,0 +1,3 @@
+watch video: https://www.youtube.com/watch?v=QzFuwljOj8Y
+
+flag at 0.17: CTF{9e796ca74932912c216a1cd00c25c84fae00e139
